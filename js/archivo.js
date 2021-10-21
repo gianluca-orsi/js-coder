@@ -1,24 +1,36 @@
-/* desafio 1 
-let nombre;
-let apellido;
-let numDocumento;
+let nombreCheck = false;
+let apellidoCheck = false;
+let edadCheck = false;
 
+while (nombreCheck == false) {
+    nombre = prompt("Ingrese su nombre: ");
+    if (nombre == null || nombre == "") {
+        alert("Por favor, ingrese un nombre valido.") }
+    else {
+        nombreCheck = true
+    }
+}
 
-nombre = prompt('Ingrese su nombre: ');
-apellido = prompt('Ingrese su apellido: ');
-numDocumento = prompt('Ingrese su numero de documento: ');
+while (apellidoCheck == false) {
+    apellido = prompt("Ingrese su apellido: ");
+    if (apellido == null || apellido == "") {
+        alert("Por favor, ingrese un apellido valido.") }
+    else {
+        apellidoCheck = true
+    }
+}
 
-alert('Hola ' + nombre + ' ' + apellido + ', tu numero de documento es ' + numDocumento + '.'); */
+while (edadCheck == false) {
+    edad = prompt("Ingrese su edad: ");
+    if (edad == null || edad == "" || edad<=0 ) {
+        alert("Por favor, ingrese una edad valida.") }
+    else {
+        edadCheck = true
+    }
+}
 
-let nombre = prompt("Ingrese su nombre: ");
-let apellido = prompt("Ingrese su apellido");
-let edad = prompt("Ingrese su edad:")
-if (nombre == null || nombre == "" || apellido == null || apellido == "" || edad == null || edad == "") {
-    alert("Por favor revise que los campos esten completados")
-} else if (edad>=18) {
+if (edad>=18) {
     alert(nombre + " " + apellido + ", usted es mayor de edad.")
-} else if(edad>=0 && edad<=17){
-    alert(nombre + " " + apellido + ", usted es menor de edad.")
 } else {
-    alert("Debe ingresar una edad valida")
+    alert(nombre + " " + apellido + ", usted es menor de edad.")
 }
