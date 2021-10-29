@@ -4,6 +4,9 @@ var precioIva = parseFloat ()
 var precioTotal = parseFloat ()
 var pesoPaq = parseFloat ()
 var tamanoPaq = parseFloat ()
+var x = parseFloat()
+var y = parseFloat()
+var z = parseFloat()
 
 /* function peso (cantidadKg){
     if (cantidadKg >= 100) {
@@ -194,8 +197,6 @@ class Cotizador {
             }
         }
         while (validar == false);
-    
-        peso(pesoPaq);
     }
     ingresoTamano (){
         let x;
@@ -237,7 +238,6 @@ class Cotizador {
         }
         while (validarZ == false);
     
-        tamano(x, y, z);
     }
     total (precio1, precio2, precio3) {
         precioTotal = precio1 + precio2 + precio3;
@@ -245,7 +245,15 @@ class Cotizador {
     }
 }
 
-ingresoPeso();
+const cotizacion1= new Cotizador;
+cotizacion1.ingresoPeso();
+cotizacion1.ingresoTamano();
+cotizacion1.peso(pesoPaq);
+cotizacion1.tamano(x, y, z);
+cotizacion1.iva(precioKg, precioTamano);
+cotizacion1.total (precioKg, precioTamano, precioIva);
+
+/* ingresoPeso();
 ingresoTamano();
 iva(precioKg, precioTamano);
-total (precioKg, precioTamano, precioIva);
+total (precioKg, precioTamano, precioIva); */
