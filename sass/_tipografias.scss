@@ -7,3 +7,42 @@
 .fuenteAssistant {
     font-family: 'Assistant', sans-serif;
 }
+
+.top {
+    &--titulo {
+        @extend .fuenteDosis;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+        &--enfasis {
+            @extend .top--titulo;
+            font-style: italic;
+            font-weight: 600;
+        }
+    }
+}
+
+.footer {
+    &--titulo {
+        @extend .fuenteDosis;
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+    }
+    &--contenido {
+        @extend .fuenteAssistant;
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+}
+
+.noticias {
+    &--titulo {
+        @extend .fuenteDosis;
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+    }
+    &--contenido {
+        @extend .fuenteAssistant;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+}
