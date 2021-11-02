@@ -127,8 +127,8 @@ class Cotizador {
     total (precio1, precio2, precio3) {
         precioTotal = precio1 + precio2 + precio3;
         alert ("Precio de este paquete: $" + precioTotal);
-        console.log("Precio del paquete numero" + (contadorExterno+1) + ": $" + acumuladorPrecioTotal[contadorExterno]);
         acumuladorPrecioTotal[contadorExterno] = precioTotal;
+        console.log("Precio del paquete numero" + (contadorExterno+1) + ": $" + acumuladorPrecioTotal[contadorExterno]);
         precioTotalAcumulado += precioTotal;
     }
 }
