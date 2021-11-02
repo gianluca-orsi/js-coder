@@ -2,6 +2,8 @@ var precioKg = parseFloat() /* precio del paquete en base a los kilos */
 var precioTamano = parseFloat () /* precio del paquete en base a su tamaño */
 var precioIva = parseFloat () /* iva del paquete, precioKg + precioTamano */
 var precioTotal = parseFloat () /* precio total del paquete, precioKg + precioTamano + precioIva */
+var cantidadPaq = parseInt();
+var precioTotalAcumulado = 0;
 
 class Cotizador {
     constructor (x, y, z, pesoPaq) {
@@ -23,7 +25,7 @@ class Cotizador {
         else if (pesoPaq >= 20 && pesoPaq <= 29) {
             precioKg = 500;
         }
-        else if (cantidadKg >= 10 && cantidadKg <= 19) {
+        else if (pesoPaq >= 10 && pesoPaq <= 19) {
             precioKg = 400;
         }
         else {
@@ -119,12 +121,19 @@ class Cotizador {
     }
     total (precio1, precio2, precio3) {
         precioTotal = precio1 + precio2 + precio3;
-        alert ("Precio total: $" + precioTotal);
+        alert ("Precio de este paquete: $" + precioTotal);
     }
 }
 
-const cotizacion1= new Cotizador;
-cotizacion1.ingresoPeso();
-cotizacion1.ingresoTamano();
-cotizacion1.iva(precioKg, precioTamano);
-cotizacion1.total (precioKg, precioTamano, precioIva);
+cantidadPaq = prompt("Ingrese la cantidad de paquetes a cotizar: ")
+for (let i = 0; i <cantidadPaq; i++){
+    const cotizacion= new Cotizador;
+    console.log("Este es el paquete numero: " + (i+1) + ".")
+    cotizacion.ingresoPeso();
+    cotizacion.ingresoTamano();
+    cotizacion.iva(precioKg, precioTamano);
+    cotizacion.total (precioKg, precioTamano, precioIva);
+    precioTotalAcumulado = precioTotalAcumulado + precioTotal;
+}
+
+alert ("Precio total: $" + precioTotalAcumulado);
