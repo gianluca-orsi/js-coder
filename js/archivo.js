@@ -3,6 +3,11 @@ var precioTamano = parseFloat () /* precio del paquete en base a su tamaño */
 var precioIva = parseFloat () /* iva del paquete, precioKg + precioTamano */
 var precioTotal = parseFloat () /* precio total del paquete, precioKg + precioTamano + precioIva */
 var cantidadPaq = parseInt();
+var contadorExterno = [];
+var acumuladorPrecioKg = [];
+var acumuladorPrecioTamano = [];
+var acumuladorPrecioIva = [];
+var acumuladorPrecioTotal = [];
 var precioTotalAcumulado = 0;
 
 class Cotizador {
@@ -31,9 +36,9 @@ class Cotizador {
         else {
             precioKg = 300;
         }    
-        
-        console.log("Peso total: " +pesoPaq + " kg.");
-        console.log("Precio por peso: $" + precioKg);
+        acumuladorPrecioKg[contadorExterno] = precioKg;
+        console.log("Precio del paquete numero " + (contadorExterno+1) + " por peso: $" + acumuladorPrecioKg[contadorExterno]);
+        console.log("Peso total: " + pesoPaq + " kg.");
     }
     tamano (x, y, z) {
         if (x >= 400 || y >= 400 || z >= 400) {
@@ -51,15 +56,16 @@ class Cotizador {
         else {
             precioTamano = 350
         }
-    
+        acumuladorPrecioTamano[contadorExterno] = precioTamano;
         console.log("Ancho del paquete: " + x +" cm.");
         console.log("Altura del paquete: " + y +" cm.");
         console.log("Profundidad del paquete: " + z +" cm.");
-        console.log("Precio por tamano: $" + precioTamano);
+        console.log("Precio del paquete numero " + (contadorExterno+1) + " por tamano: $" + acumuladorPrecioTamano[contadorExterno]);
     }
     iva (num1, num2) {
         precioIva = (num1 + num2) * 0.21;
-        console.log("Total IVA: $" + precioIva)
+        acumuladorPrecioIva[contadorExterno] = precioIva;
+        console.log("Total IVA del paquete " + (contadorExterno+1) + ": $" + acumuladorPrecioIva[contadorExterno]);
     }
     ingresoPeso () {
         let pesoPaq;
@@ -74,7 +80,6 @@ class Cotizador {
             }
         }
         while (validar == false);
-
         this.peso(pesoPaq);
     }
     ingresoTamano (){
@@ -122,18 +127,25 @@ class Cotizador {
     total (precio1, precio2, precio3) {
         precioTotal = precio1 + precio2 + precio3;
         alert ("Precio de este paquete: $" + precioTotal);
+        console.log("Precio del paquete numero" + (contadorExterno+1) + ": $" + acumuladorPrecioTotal[contadorExterno]);
+        acumuladorPrecioTotal[contadorExterno] = precioTotal;
+        precioTotalAcumulado += precioTotal;
     }
 }
 
 cantidadPaq = prompt("Ingrese la cantidad de paquetes a cotizar: ")
-for (let i = 0; i <cantidadPaq; i++){
+for (contadorExterno = 0; contadorExterno <cantidadPaq; contadorExterno++){
     const cotizacion= new Cotizador;
-    console.log("Este es el paquete numero: " + (i+1) + ".")
+    console.log("Este es el paquete numero: " + (contadorExterno+1) + ".")
     cotizacion.ingresoPeso();
     cotizacion.ingresoTamano();
     cotizacion.iva(precioKg, precioTamano);
     cotizacion.total (precioKg, precioTamano, precioIva);
-    precioTotalAcumulado = precioTotalAcumulado + precioTotal;
 }
 
-alert ("Precio total: $" + precioTotalAcumulado);
+if (contadorExterno == 1) {
+    alert("Tu paquete da un precio total de: $" + precioTotalAcumulado);
+} else {
+    alert ("Tus " + cantidadPaq + " paquetes dan un precio total de: $" + precioTotalAcumulado);
+}
+
