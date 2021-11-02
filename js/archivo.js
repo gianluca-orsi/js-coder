@@ -128,7 +128,7 @@ class Cotizador {
         precioTotal = precio1 + precio2 + precio3;
         alert ("Precio de este paquete: $" + precioTotal);
         acumuladorPrecioTotal[contadorExterno] = precioTotal;
-        console.log("Precio del paquete numero" + (contadorExterno+1) + ": $" + acumuladorPrecioTotal[contadorExterno]);
+        console.log("Precio del paquete numero " + (contadorExterno+1) + ": $" + acumuladorPrecioTotal[contadorExterno]);
         precioTotalAcumulado += precioTotal;
     }
 }
@@ -145,7 +145,10 @@ for (contadorExterno = 0; contadorExterno <cantidadPaq; contadorExterno++){
 
 if (contadorExterno == 1) {
     alert("Tu paquete da un precio total de: $" + precioTotalAcumulado);
+    console.log("Total acumulado: $" + precioTotalAcumulado);
 } else {
     alert ("Tus " + cantidadPaq + " paquetes dan un precio total de: $" + precioTotalAcumulado);
+    console.log("Total acumulado: $" + precioTotalAcumulado);
+    console.log("Esto se obtiene al sumar el total de cada uno de sus paquetes: $" +acumuladorPrecioTotal.join(" + $"));
 }
 
