@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gianluca-orsi/js-coder/issues"
   },
-  "homepage": "https://github.com/gianluca-orsi/js-coder#readme"
+  "homepage": "https://github.com/gianluca-orsi/js-coder#readme",
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
 }

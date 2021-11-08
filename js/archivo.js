@@ -3,13 +3,12 @@ var precioTamano = parseFloat () /* precio del paquete en base a su tamaño */
 var precioIva = parseFloat () /* iva del paquete, precioKg + precioTamano */
 var precioTotal = parseFloat () /* precio total del paquete, precioKg + precioTamano + precioIva */
 var cantidadPaq = parseInt();
-var contadorExterno = [];
+var contadorExterno;
 var acumuladorPrecioKg = [];
 var acumuladorPrecioTamano = [];
 var acumuladorPrecioIva = [];
 var acumuladorPrecioTotal = [];
 var precioTotalAcumulado = 0;
-
 class Cotizador {
     constructor (x, y, z, pesoPaq) {
         this.x = x;
@@ -133,22 +132,33 @@ class Cotizador {
     }
 }
 
-cantidadPaq = prompt("Ingrese la cantidad de paquetes a cotizar: ")
-for (contadorExterno = 0; contadorExterno <cantidadPaq; contadorExterno++){
-    const cotizacion= new Cotizador;
-    console.log("Este es el paquete numero: " + (contadorExterno+1) + ".")
-    cotizacion.ingresoPeso();
-    cotizacion.ingresoTamano();
-    cotizacion.iva(precioKg, precioTamano);
-    cotizacion.total (precioKg, precioTamano, precioIva);
-}
+function activarCotizador() {
+    let validarPaq = true;
+    do {
+        cantidadPaq = prompt("Ingrese la cantidad de paquetes a cotizar: ");
+        if (cantidadPaq == null || cantidadPaq == "" || cantidadPaq <= 0) {
+            validarPaq = false;
+        }
+        else {
+            validarPaq = true;
+        }
+    } while (validarPaq == false)
+    
+    for (contadorExterno = 0; contadorExterno <cantidadPaq; contadorExterno++){
+        const cotizacion = new Cotizador;
+        console.log("Este es el paquete numero: " + (contadorExterno+1) + ".")
+        cotizacion.ingresoPeso();
+        cotizacion.ingresoTamano();
+        cotizacion.iva(precioKg, precioTamano);
+        cotizacion.total (precioKg, precioTamano, precioIva);
+    }
 
-if (contadorExterno == 1) {
-    alert("Tu paquete da un precio total de: $" + precioTotalAcumulado);
-    console.log("Total acumulado: $" + precioTotalAcumulado);
-} else {
-    alert ("Tus " + cantidadPaq + " paquetes dan un precio total de: $" + precioTotalAcumulado);
-    console.log("Total acumulado: $" + precioTotalAcumulado);
-    console.log("Esto se obtiene al sumar el total de cada uno de sus paquetes: $" +acumuladorPrecioTotal.join(" + $"));
+    if (contadorExterno == 1) {
+        alert("Tu paquete da un precio total de: $" + precioTotalAcumulado);
+        console.log("Total acumulado: $" + precioTotalAcumulado);
+    } else {
+        alert ("Tus " + cantidadPaq + " paquetes dan un precio total de: $" + precioTotalAcumulado);
+        console.log("Total acumulado: $" + precioTotalAcumulado);
+        console.log("Esto se obtiene al sumar el total de cada uno de sus paquetes: $" +acumuladorPrecioTotal.join(" + $"));
+    }
 }
-

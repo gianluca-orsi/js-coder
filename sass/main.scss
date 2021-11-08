@@ -7,3 +7,10 @@
 html {
     font-size: 62.5%;
 }
+
+a {
+    color: #FF7F4D;
+    &:hover {
+        color: #A582FF !important;
+    }
+}

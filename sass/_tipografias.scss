@@ -39,10 +39,28 @@
         @extend .fuenteDosis;
         font-size: 2.2rem;
         line-height: 2.4rem;
+        text-decoration: underline;
     }
     &--contenido {
         @extend .fuenteAssistant;
         font-size: 1.6rem;
         line-height: 1.8rem;
+    }
+}
+
+.boton {
+    &--texto {
+        @extend .fuenteAssistant;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+}
+
+.separador {
+    &--texto {
+        @extend .fuenteDosis;
+        font-size: 2rem;
+        line-height: 2.2rem;
+        text-decoration: underline;
     }
 }

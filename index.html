@@ -3,15 +3,15 @@
 <html lang="es">
     
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant&family=Dosis&display=swap');
     </style>
+    <link rel="stylesheet" href="./css/hover.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
-
+    <title>Fast Service</title>
+    <script src="./js/archivo.js"></script>
 </head>
 
 <body>
@@ -29,7 +29,6 @@
     <main class="container is-fluid">
         <header class="my-3 pt-2">
             <div class="columns is-mobile is-centered my-3">
-                <!-- para poner algun texto que atraiga -->
                 <section class="column is-10 has-text-centered top">
                     <h1 class="top--titulo">
                         Bienvenidos al sitio web de <span class="top--titulo--enfasis">Fast Service</span>, estamos para brindarte un servicio de paquetería seguro y veloz para que tus envíos lleguen a todo el país
@@ -37,6 +36,14 @@
                 </section>
             </div>
         </header>
+        
+        <div class="columns is-mobile is-centered my-3">
+            <section class="column is-6 separador">
+                <p class="separador--texto has-text-centered">
+                    Noticias
+                </p>
+            </section>
+        </div>
 
         <div class="columns is-mobile is-centered">
             <div class="column is-10">
@@ -71,6 +78,22 @@
                 </div>
             </div>
         </div>
+
+        <div class="columns is-mobile is-centered">
+            <section class="column is-6 separador">
+                <p class="separador--texto has-text-centered">
+                    Cotizador de envíos
+                </p>
+            </section>
+        </div>
+
+        <div class="columns is-mobile is-centered has-text-centered my-3">
+            <section class="column is-6">
+                <button class="hvr-ripple-out button boton boton--texto" onclick="activarCotizador()">
+                    <p>Activar cotizador</p>
+                </button>
+            </section>
+        </div>
     </main>
 
     <footer class="mt-3" id="Contacto">
@@ -93,7 +116,6 @@
             </div>
         </div>
     </footer>
-    <script src="./js/archivo.js"></script>
 </body>
 
 </html>
