@@ -1,8 +1,12 @@
-var precioKg = parseFloat() /* precio del paquete en base a los kilos */
-var precioTamano = parseFloat () /* precio del paquete en base a su tamaño */
-var precioIva = parseFloat () /* iva del paquete, precioKg + precioTamano */
-var precioTotal = parseFloat () /* precio total del paquete, precioKg + precioTamano + precioIva */
-var cantidadPaq = parseInt();
+var precioKg = []; /* precio del paquete en base a los kilos */
+var precioTamano = []; /* precio del paquete en base a su tamaño */
+var precioIva = []; /* iva del paquete, precioKg + precioTamano */
+var precioTotal = []; /* precio total del paquete, precioKg + precioTamano + precioIva */
+/* var cantidadPaq = parseInt(); */
+var x = [];
+var y = [];
+var z = [];
+var pesoPaq = [];
 var contadorExterno;
 var acumuladorPrecioKg = [];
 var acumuladorPrecioTamano = [];
@@ -56,9 +60,9 @@ class Cotizador {
             precioTamano = 350
         }
         acumuladorPrecioTamano[contadorExterno] = precioTamano;
-        console.log("Ancho del paquete: " + x +" cm.");
-        console.log("Altura del paquete: " + y +" cm.");
-        console.log("Profundidad del paquete: " + z +" cm.");
+        console.log("Ancho del paquete " + (contadorExterno+1) + ": " + x +" cm.");
+        console.log("Altura del paquete " + + (contadorExterno+1) + ": "+ y +" cm.");
+        console.log("Profundidad del paquete " + + (contadorExterno+1) + ": "+ z +" cm.");
         console.log("Precio del paquete numero " + (contadorExterno+1) + " por tamano: $" + acumuladorPrecioTamano[contadorExterno]);
     }
     iva (num1, num2) {
@@ -82,14 +86,14 @@ class Cotizador {
         this.peso(pesoPaq);
     }
     ingresoTamano (){
-        let x;
+        /* let x;
         let y;
-        let z;
+        let z; */
         let validarX = true
         let validarY = true
         let validarZ = true
         do {
-            x = prompt("Ingrese el ancho de su paquete en centimetros: ");
+            x[contadorExterno] = prompt("Ingrese el ancho de su paquete en centimetros: ");
             if (x == null || x == "" || x <= 0) {
                 validarX = false;
             }
@@ -100,7 +104,7 @@ class Cotizador {
         while (validarX == false);
     
         do {
-            y = prompt("Ingrese la altura de su paquete en centimetros: ");
+            y[contadorExterno] = prompt("Ingrese la altura de su paquete en centimetros: ");
             if (y == null || y == "" || y <= 0) {
                 validarY = false;
             }
@@ -111,7 +115,7 @@ class Cotizador {
         while (validarY == false);
     
         do {
-            z = prompt("Ingrese la profundidad de su paquete en centimetros: ");
+            z[contadorExterno] = prompt("Ingrese la profundidad de su paquete en centimetros: ");
             if (z == null || z == "" || z <= 0) {
                 validarZ = false;
             }
@@ -133,7 +137,7 @@ class Cotizador {
 }
 
 function activarCotizador() {
-    let validarPaq = true;
+    /*  let validarPaq = true;
     do {
         cantidadPaq = prompt("Ingrese la cantidad de paquetes a cotizar: ");
         if (cantidadPaq == null || cantidadPaq == "" || cantidadPaq <= 0) {
@@ -142,8 +146,10 @@ function activarCotizador() {
         else {
             validarPaq = true;
         }
-    } while (validarPaq == false)
-    
+    } while (validarPaq == false) */
+
+    let cantidadPaq = document.getElementById("paquetes").value;
+
     for (contadorExterno = 0; contadorExterno <cantidadPaq; contadorExterno++){
         const cotizacion = new Cotizador;
         console.log("Este es el paquete numero: " + (contadorExterno+1) + ".")
@@ -161,4 +167,8 @@ function activarCotizador() {
         console.log("Total acumulado: $" + precioTotalAcumulado);
         console.log("Esto se obtiene al sumar el total de cada uno de sus paquetes: $" +acumuladorPrecioTotal.join(" + $"));
     }
+
+    let resultado = document.createElement("p")
+    resultado.innerHTML = `El total de su cotizacion es $${precioTotalAcumulado}.`
+    document.getElementById('cotizador').appendChild(resultado);
 }
