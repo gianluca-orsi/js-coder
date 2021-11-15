@@ -89,16 +89,60 @@
 
         <div class="columns is-mobile is-centered has-text-centered my-3">
             <section class="column is-8 field noticias" id="cotizador">
-                <label class="label" for="paquetes">Cantidad de paquetes: </label>
-                <div class="control">
-                    <input class="input" type="text" id="paquetes" placeholder="Numero de paquetes">
-                </div>
-                <button class="hvr-ripple-out button boton boton--texto my-3" onclick="activarCotizador()">
-                    <p>Activar cotizador</p>
+                <button class="hvr-ripple-out button boton boton--texto my-3" onclick="anadirPaquete()">
+                    <p>Añadir paquete para cotizar</p>
                 </button>
             </section>
         </div>
 
+        <div class="columns is-mobile is-centered has-text-centered">
+            <div class="column is-10">
+                <table class="table is-invisible" id="tablaCotizador">
+                    <thead>
+                        <tr>
+                            <th>
+                                N° Paq.
+                            </th>
+                            <th>
+                                Ancho
+                            </th>
+                            <th>
+                                Alto
+                            </th>
+                            <th>
+                                Profundidad
+                            </th>
+                            <th>
+                                Peso
+                            </th>
+                            <th>
+                                $ Tamaño
+                            </th>
+                            <th>
+                                $ Peso
+                            </th>
+                            <th>
+                                IVA
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                            <th>
+                                
+                            </th>
+                        </tr>
+                    </thead>
+
+                </table>
+                <button class="button is-invisible" id="botonCalcular" onclick="comenzarCotizacion()">Calcular</button>
+            </div>
+        </div>
+
+        <div class="columns is-mobile is-centered has-text-centered">
+            <section class="column is-8 is-justify-content-center is-centered noticias is-hidden" id="divCotizador">
+                
+            </section>
+        </div>
         
     </main>
 
