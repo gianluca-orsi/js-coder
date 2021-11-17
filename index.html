@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/hover.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Fast Service</title>
-    <script src="./js/archivo.js"></script>
+    <script src="https://kit.fontawesome.com/3a04be6fa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,6 +23,15 @@
                     Fast Service
                 </p>
             </a>
+        </div>
+        <div class="navbar-menu is-active">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a style="font-size: 2rem; background-color:'black';" onclick="usuario()">
+                        <i class="fas fa-id-badge"></i> Usuario
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
     
@@ -139,10 +148,30 @@
             </div>
         </div>
 
-        <div class="columns is-mobile has-text-centered">
-            <section class="column is-8 is-justify-content-center is-centered noticias is-hidden" id="divCotizador">
+        <div class="columns is-mobile is-centered has-text-centered">
+            <section class="column is-8 noticias is-hidden is-inline-block" id="divCotizador">
                 
             </section>
+        </div>
+
+        <div class="modal" id="modalUsuario">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Menú usuario</p>
+                <button id="cerrar" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+                <div class="columns is-mobile is-centered">
+    
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button class="button">Cancel</button>
+            </footer>
+            </div>
         </div>
         
     </main>
@@ -167,6 +196,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/archivo.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+var nombreUsuario;
 var precioPorKg = [100, 200, 350, 600, 800, 1000];
 var precioPorTamano = [100, 200, 350, 600, 800, 1000];
 var iva = 0.21;
@@ -109,16 +110,16 @@ function anadirPaquete (){
                                         <p class="cantidadPaq">${cantidadPaq + 1} 
                                     </td>
                                     <td>
-                                        <input class="input x" type="text" placeholder="Ancho en cm." required>
+                                        <input class="input x" type="number" placeholder="Ancho en cm." required>
                                     </td>
                                     <td> 
-                                        <input class="input y" type="text" placeholder="Altura en cm." required>
+                                        <input class="input y" type="number" placeholder="Altura en cm." required>
                                     </td>
                                     <td> 
-                                        <input class="input z" type="text" placeholder="Profundidad en cm." required>
+                                        <input class="input z" type="number" placeholder="Profundidad en cm." required>
                                     </td>
                                     <td> 
-                                        <input class="input peso" type="text" placeholder="Peso en kg." required>
+                                        <input class="input peso" type="number" placeholder="Peso en kg." required>
                                     </td>
                                     <td> 
                                         <input class="input precioTamano" type="text" disabled>
@@ -186,11 +187,20 @@ function anadirPaquete (){
 function comenzarCotizacion (){
     let contador = document.getElementsByClassName("cantidadPaq").length;
     console.log(contador);
+
+    //toma los valores de los campos del formulario y los guarda en variables
     for (let i=0; i<contador; i++) {
         tamanoX[i] = document.getElementsByClassName("x")[i].value;
         tamanoY[i] = document.getElementsByClassName("y")[i].value;
         tamanoZ[i] = document.getElementsByClassName("z")[i].value;
         pesoKG[i] = document.getElementsByClassName("peso")[i].value;
+
+        if (tamanoX[i] == '' || tamanoX[i] <= 0 || 
+            tamanoY[i] == '' || tamanoY[i] <= 0 ||
+            tamanoZ[i] == '' || tamanoZ[i] <= 0 ||
+            pesoKG[i] == '' ||pesoKG[i] <= 0) {
+                return false;
+        }
     }
     //crea los objetos cotizadores individuales, se pueden ver en la consola
     for (let i = 0; i<cantidadPaq; i++) {
@@ -233,3 +243,18 @@ function comenzarCotizacion (){
 
 console.log(cotizacion);
 console.log(typeof precioTotal)
+
+
+function usuario () {
+    let menuUsuario = document.getElementById("modalUsuario")
+    menuUsuario.classList.add("is-active", "is-clipped");
+    /* nombreUsuario = document.getElementById("usuario").value; */
+}
+
+let botonCerrar = document.getElementById("cerrar")
+botonCerrar.addEventListener("click", cerrar)
+
+function cerrar () {
+    let modalUsuario = document.getElementById("modalUsuario");
+    modalUsuario.classList.remove("is-active", "is-clipped");
+}
