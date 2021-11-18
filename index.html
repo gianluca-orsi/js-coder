@@ -159,17 +159,28 @@
             <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Menú usuario</p>
-                <button id="cerrar" class="delete" aria-label="close"></button>
+                <button onclick="cerrar()" id="cerrar" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-                <!-- Content ... -->
                 <div class="columns is-mobile is-centered">
-    
+                    <div class="column is-4">
+                        <label for="nombreUsuario">Nombre:</label>
+                        <input type="text" class="input" id="nombreUsuario" disabled placeholder="Nombre">
+                        <label for="telefonoUsuario">Telefono:</label>
+                        <input type="number" class="input" id="telefonoUsuario" disabled placeholder="Telefono">
+                    </div>
+                    <div class="column is-4">
+                        <label for="apellidoUsuario">Apellido:</label>
+                        <input type="text" class="input" id="apellidoUsuario" disabled placeholder="Apellido">
+                        <label for="domicilioUsuario">Domicilio:</label>
+                        <input type="text" class="input" id="domicilioUsuario" disabled placeholder="Domicilio">
+                    </div>
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button">Cancel</button>
+                <button class="button is-success" onclick="cargarDatos()">Guardar cambios</button>
+                <button class="button" onclick="modificarDatos()">Modificar datos</button>
+                <button class="button" onclick="borrarDatos()">Borrar datos</button>
             </footer>
             </div>
         </div>
@@ -196,8 +207,9 @@
             </div>
         </div>
     </footer>
-
+    
     <script src="./js/archivo.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-var nombreUsuario;
 var precioPorKg = [100, 200, 350, 600, 800, 1000];
 var precioPorTamano = [100, 200, 350, 600, 800, 1000];
 var iva = 0.21;
@@ -102,8 +101,8 @@ class Cotizador {
 //cuando se hace clic en anadir paquete para cotizar saca la clase is-invisible
 //del boton calcular y la tabla donde se colocan los valores a utilizar
 function anadirPaquete (){
-    document.getElementById("tablaCotizador").classList.remove("is-invisible");
-    document.getElementById("botonCalcular").classList.remove("is-invisible");
+    $("#tablaCotizador").removeClass("is-invisible");
+    $("#botonCalcular").removeClass("is-invisible");
     let nuevoPaquete = document.createElement("tr");
     nuevoPaquete.innerHTML =    `<tr class="rowCotizador">
                                     <td> 
@@ -133,67 +132,23 @@ function anadirPaquete (){
                                     <td> 
                                         <input class="input precioTotal" type="text" disabled>
                                     </td>
-                                </tr>`                                   
-    document.getElementById("tablaCotizador").appendChild(nuevoPaquete);
+                                </tr>`
+    $("#tablaCotizador").append(nuevoPaquete);                                   
     cantidadPaq += 1;
-    //autoID();
-
-    // return false ---- para cortar la funcion, se puede usar para validaciones
 }
-
-//anade un id a cada td, iba a utilizarlo pero encontre otra forma mas facil de tomar los datos
-//lo dejo en caso de necesitar algo parecido mas adelante
-/* function autoID (){
-    let listaCantidadPaq = document.getElementsByClassName("cantidadPaq")
-    let listaX = document.getElementsByClassName("x")
-    let listaY = document.getElementsByClassName("y")
-    let listaZ = document.getElementsByClassName("z")
-    let listaPeso = document.getElementsByClassName("peso")
-    let listaPrecioTamano = document.getElementsByClassName("precioTamano")
-    let listaPrecioPeso = document.getElementsByClassName("precioPeso")
-    let listaPrecioIva = document.getElementsByClassName("precioIva")
-    let listaPrecioTotal = document.getElementsByClassName("precioTotal")
-    for (let i = 0; i<listaCantidadPaq.length; i++) {
-        listaCantidadPaq[i].id = "cantidadPaq" + (i+1);
-    }
-    for (let i = 0; i<listaX.length; i++) {
-        listaX[i].id = "x" + (i+1);
-    }
-    for (let i = 0; i<listaY.length; i++) {
-        listaY[i].id = "y" + (i+1);
-    }
-    for (let i = 0; i<listaZ.length; i++) {
-        listaZ[i].id = "z" + (i+1);
-    }
-    for (let i = 0; i<listaPeso.length; i++) {
-        listaPeso[i].id = "peso" + (i+1);
-    }
-    for (let i = 0; i<listaPrecioTamano.length; i++) {
-        listaPrecioTamano[i].id = "precioTamano" + (i+1);
-    }
-    for (let i = 0; i<listaPrecioPeso.length; i++) {
-        listaPrecioPeso[i].id = "precioPeso" + (i+1);
-    }
-    for (let i = 0; i<listaPrecioIva.length; i++) {
-        listaPrecioIva[i].id = "precioIva" + (i+1);
-    }
-    for (let i = 0; i<listaPrecioTotal.length; i++) {
-        listaPrecioTotal[i].id = "precioTotal" + (i+1);
-    }
-} */
 
 //cuando haces clic en calcular inicia esta funcion
 //toma los valores que se ingresan en el formulario y los asigna al array correspondiente
 function comenzarCotizacion (){
-    let contador = document.getElementsByClassName("cantidadPaq").length;
+    let contador = $(".cantidadPaq").length;
     console.log(contador);
 
     //toma los valores de los campos del formulario y los guarda en variables
     for (let i=0; i<contador; i++) {
-        tamanoX[i] = document.getElementsByClassName("x")[i].value;
-        tamanoY[i] = document.getElementsByClassName("y")[i].value;
-        tamanoZ[i] = document.getElementsByClassName("z")[i].value;
-        pesoKG[i] = document.getElementsByClassName("peso")[i].value;
+        tamanoX[i] = $(".x")[i].value;
+        tamanoY[i] = $(".y")[i].value;
+        tamanoZ[i] = $(".z")[i].value;
+        pesoKG[i] = $(".peso")[i].value;
 
         if (tamanoX[i] == '' || tamanoX[i] <= 0 || 
             tamanoY[i] == '' || tamanoY[i] <= 0 ||
@@ -220,10 +175,10 @@ function comenzarCotizacion (){
     }
     //da a los campos deshabilitados del formulario el valor correspondiente
     for (let i = 0; i<cantidadPaq; i++) {
-        document.getElementsByClassName ("precioPeso")[i].value = cotizacion[i].precioPeso
-        document.getElementsByClassName ("precioTamano")[i].value = cotizacion[i].precioTamano
-        document.getElementsByClassName ("precioIva")[i].value = cotizacion[i].precioIva
-        document.getElementsByClassName ("precioTotal")[i].value = cotizacion[i].precioTotal
+        $(".precioPeso")[i].value = cotizacion[i].precioPeso
+        $(".precioTamano")[i].value = cotizacion[i].precioTamano
+        $(".precioIva")[i].value = cotizacion[i].precioIva
+        $(".precioTotal")[i].value = cotizacion[i].precioTotal
     }
     //acumulador del precio total de cada cotizacion
     for (let i = 0; i<cantidadPaq; i++) {
@@ -232,11 +187,11 @@ function comenzarCotizacion (){
     }
     //remueve la clase is-hidden de un div en html y muestra el resultado total acumulado de las cotizaciones
     var resultadoTotal = document.createElement ("p");
-    resultadoTotal.classList.add("has-text-centered", "is-justify-content-center", "is-centered", "is-mobile");
+    $(resultadoTotal).addClass("has-text-centered is-justify-content-center is-centered is-mobile");
     resultadoTotal.id = "resultadoId";
     resultadoTotal.innerHTML =  `El total de sus ${cantidadPaq} paquetes es $${acumulador}.`
-    document.getElementById("divCotizador").classList.remove("is-hidden");
-    document.getElementById("divCotizador").appendChild(resultadoTotal);
+    $("#divCotizador").removeClass("is-hidden");
+    $("#divCotizador").append(resultadoTotal);
     console.log(precioTotal);
     acumulador = 0;
 }
@@ -244,17 +199,54 @@ function comenzarCotizacion (){
 console.log(cotizacion);
 console.log(typeof precioTotal)
 
-
+//hace aparecer un modal donde se puede cambiar el nombre de usuario --- falta
 function usuario () {
-    let menuUsuario = document.getElementById("modalUsuario")
-    menuUsuario.classList.add("is-active", "is-clipped");
-    /* nombreUsuario = document.getElementById("usuario").value; */
+    let menuUsuario = $("#modalUsuario")
+    $(menuUsuario).addClass("is-active is-clipped");
+    $("#nombreUsuario").val(localStorage.getItem("nombreUsuario"));
+    $("#apellidoUsuario").val(localStorage.getItem("apellidoUsuario"));
+    $("#telefonoUsuario").val(localStorage.getItem("telefonoUsuario"));
+    $("#domicilioUsuario").val(localStorage.getItem("domicilioUsuario"));
 }
 
-let botonCerrar = document.getElementById("cerrar")
-botonCerrar.addEventListener("click", cerrar)
+//saca el disabled a los inputs del modal usuario para poder ingresar nuevos datos
+function modificarDatos (){
+    $("#nombreUsuario").prop("disabled", false);
+    $("#apellidoUsuario").prop("disabled", false);
+    $("#telefonoUsuario").prop("disabled", false);
+    $("#domicilioUsuario").prop("disabled", false);
+}
 
+//cargar datos al modal usuario
+function cargarDatos () {
+    let nombreUsuario = $("#nombreUsuario").val();
+    let apellidoUsuario = $("#apellidoUsuario").val();
+    let telefonoUsuario = $("#telefonoUsuario").val();
+    let domicilioUsuario = $("#domicilioUsuario").val();
+    localStorage.setItem("nombreUsuario", nombreUsuario);
+    localStorage.setItem("apellidoUsuario", apellidoUsuario);
+    localStorage.setItem("telefonoUsuario", telefonoUsuario);
+    localStorage.setItem("domicilioUsuario", domicilioUsuario);
+    $("#nombreUsuario").prop("disabled", true);
+    $("#apellidoUsuario").prop("disabled", true);
+    $("#telefonoUsuario").prop("disabled", true);
+    $("#domicilioUsuario").prop("disabled", true);
+}
+
+//
+function borrarDatos () {
+    localStorage.removeItem("nombreUsuario");
+    localStorage.removeItem("apellidoUsuario");
+    localStorage.removeItem("telefonoUsuario");
+    localStorage.removeItem("domicilioUsuario");
+    $("#nombreUsuario").val("");
+    $("#apellidoUsuario").val("");
+    $("#telefonoUsuario").val("");
+    $("#domicilioUsuario").val("");
+}
+
+//cierra el modal de usuario
 function cerrar () {
-    let modalUsuario = document.getElementById("modalUsuario");
-    modalUsuario.classList.remove("is-active", "is-clipped");
+    let modalUsuario = $("#modalUsuario");
+    $(modalUsuario).removeClass("is-active is-clipped");
 }
