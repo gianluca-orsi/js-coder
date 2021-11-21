@@ -185,13 +185,24 @@ function comenzarCotizacion (){
         let precios = Array.from(precioTotal);
         acumulador = acumulador + precios[i];
     }
+    
+    var convertirAJSON = {precioAcumulado: acumulador, cantidadDePaquetes: cantidadPaq};
+    var pruebaJSON = JSON.stringify(convertirAJSON);
+    console.log(pruebaJSON);
+    var pruebaJSON2 = JSON.parse(pruebaJSON);
+    console.log(pruebaJSON2);
+
     //remueve la clase is-hidden de un div en html y muestra el resultado total acumulado de las cotizaciones
     var resultadoTotal = document.createElement ("p");
     $(resultadoTotal).addClass("has-text-centered is-justify-content-center is-centered is-mobile");
     resultadoTotal.id = "resultadoId";
-    resultadoTotal.innerHTML =  `El total de sus ${cantidadPaq} paquetes es $${acumulador}.`
+    resultadoTotal.innerHTML =  `El total de sus ${pruebaJSON2.cantidadDePaquetes} paquetes es $${pruebaJSON2.precioAcumulado}.`
     $("#divCotizador").removeClass("is-hidden");
+    $("#divCotizador").empty();
     $("#divCotizador").append(resultadoTotal);
+    verificadorCotizacion = false;
+    
+    
     console.log(precioTotal);
     acumulador = 0;
 }
