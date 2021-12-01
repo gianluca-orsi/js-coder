@@ -31,6 +31,11 @@
                         <i class="fas fa-id-badge"></i> Usuario
                     </a>
                 </div>
+                <div class="navbar-item">
+                    <a style="font-size: 2rem; background-color:'black';" onclick="iniciarConsulta()">
+                        <i class="fas fa-id-badge"></i> Iniciar Consulta
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -166,14 +171,21 @@
                     <div class="column is-4">
                         <label for="nombreUsuario">Nombre:</label>
                         <input type="text" class="input" id="nombreUsuario" disabled placeholder="Nombre">
-                        <label for="telefonoUsuario">Telefono:</label>
-                        <input type="number" class="input" id="telefonoUsuario" disabled placeholder="Telefono">
-                    </div>
-                    <div class="column is-4">
                         <label for="apellidoUsuario">Apellido:</label>
                         <input type="text" class="input" id="apellidoUsuario" disabled placeholder="Apellido">
+                        
+                    </div>
+                    <div class="column is-4">
+                        <label for="telefonoUsuario">Telefono:</label>
+                        <input type="number" class="input" id="telefonoUsuario" disabled placeholder="Telefono">
                         <label for="domicilioUsuario">Domicilio:</label>
                         <input type="text" class="input" id="domicilioUsuario" disabled placeholder="Domicilio">
+                    </div>
+                </div>
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-8">
+                        <label for="emailUsuario">Email:</label>
+                        <input type="email" class="input" id="emailUsuario" disabled placeholder="Email">
                     </div>
                 </div>
             </section>
@@ -185,6 +197,45 @@
             </div>
         </div>
         
+        // modal de consultas
+        <div class="modal" id="modalConsulta">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Consultas</p>
+                <button onclick="cerrarC()" id="cerrar" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-4">
+                        <label for="nombreUsuario">Nombre:</label>
+                        <input type="text" class="input" id="nombreUsuarioC" disabled placeholder="Nombre">
+                        <label for="apellidoUsuario">Apellido:</label>
+                        <input type="text" class="input" id="apellidoUsuarioC" disabled placeholder="Apellido">
+                        
+                    </div>
+                    <div class="column is-4">
+                        <label for="telefonoUsuario">Telefono:</label>
+                        <input type="number" class="input" id="telefonoUsuarioC" disabled placeholder="Telefono">
+                        <label for="domicilioUsuario">Domicilio:</label>
+                        <input type="text" class="input" id="domicilioUsuarioC" disabled placeholder="Domicilio">
+                    </div>
+                </div>
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-8">
+                        <label for="emailUsuario">Email:</label>
+                        <input type="email" class="input" id="emailUsuarioC" disabled placeholder="Email">
+                        <label for="consulta">Escriba su consulta:</label>
+                        <textarea class="textarea" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit provident eius odit dignissimos ducimus, qui impedit, quos et quis sapiente similique totam nihil nostrum, harum eligendi ipsa nobis sit iure." rows="10"></textarea>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" onclick="enviarConsulta()">Enviar consulta</button>
+            </footer>
+            </div>
+        </div>
+
     </main>
 
     <footer class="mt-3" id="Contacto">
