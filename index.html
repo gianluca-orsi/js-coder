@@ -197,7 +197,6 @@
             </div>
         </div>
         
-        // modal de consultas
         <div class="modal" id="modalConsulta">
             <div class="modal-background"></div>
             <div class="modal-card">
@@ -229,9 +228,14 @@
                         <textarea class="textarea" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit provident eius odit dignissimos ducimus, qui impedit, quos et quis sapiente similique totam nihil nostrum, harum eligendi ipsa nobis sit iure." rows="10"></textarea>
                     </div>
                 </div>
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-8" id="paraAgregarRespuesta">
+
+                    </div>
+                </div>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" onclick="enviarConsulta()">Enviar consulta</button>
+                <button id="botonEnviarConsulta" class="button is-success" onclick="enviarConsulta()">Enviar consulta</button>
             </footer>
             </div>
         </div>
@@ -260,6 +264,8 @@
     </footer>
     
     <script src="./js/archivo.js"></script>
+    <script src="./js/usuario.js"></script>
+    <script src="./js/consultas.js"></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
 </body>
 
