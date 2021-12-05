@@ -101,8 +101,52 @@ class Cotizador {
 //cuando se hace clic en anadir paquete para cotizar saca la clase is-invisible
 //del boton calcular y la tabla donde se colocan los valores a utilizar
 function anadirPaquete (){
-    $("#tablaCotizador").removeClass("is-invisible");
-    $("#botonCalcular").removeClass("is-invisible");
+    let tablaCotizador = document.createElement("div");
+    $(tablaCotizador).addClass("columns is-mobile is-centered has-text-centered")
+    tablaCotizador.innerHTML =  `<div class="column is-10 is-centered">
+                                    <table class="table is-centered is-inline-block is-justify-content-center" id="tablaCotizador">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    N° Paq.
+                                                </th>
+                                                <th>
+                                                    Ancho
+                                                </th>
+                                                <th>
+                                                    Alto
+                                                </th>
+                                                <th>
+                                                    Profundidad
+                                                </th>
+                                                <th>
+                                                    Peso
+                                                </th>
+                                                <th>
+                                                    $ Tamaño
+                                                </th>
+                                                <th>
+                                                    $ Peso
+                                                </th>
+                                                <th>
+                                                    IVA
+                                                </th>
+                                                <th>
+                                                    Total
+                                                </th>
+                                                <th>
+                                                    
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+                                    <br>
+                                    <button class="button boton boton--texto hvr-ripple-out" id="botonCalcular" onclick="comenzarCotizacion()">Calcular</button>
+                                </div>`
+    if (cantidadPaq == 0) {
+        $("#divAnadirPaquete").append(tablaCotizador);
+    }
     let nuevoPaquete = document.createElement("tr");
     nuevoPaquete.innerHTML =    `<tr class="rowCotizador">
                                     <td> 
@@ -186,6 +230,7 @@ function comenzarCotizacion (){
         acumulador = acumulador + precios[i];
     }
     
+    // para probar como usar JSON
     var convertirAJSON = {precioAcumulado: acumulador, cantidadDePaquetes: cantidadPaq};
     var pruebaJSON = JSON.stringify(convertirAJSON);
     console.log(pruebaJSON);
@@ -194,9 +239,14 @@ function comenzarCotizacion (){
 
     //remueve la clase is-hidden de un div en html y muestra el resultado total acumulado de las cotizaciones
     var resultadoTotal = document.createElement ("p");
-    $(resultadoTotal).addClass("has-text-centered is-justify-content-center is-centered is-mobile");
+    $(resultadoTotal).addClass("has-text-centered is-justify-content-center is-centered is-mobile resultado--texto");
     resultadoTotal.id = "resultadoId";
-    resultadoTotal.innerHTML =  `El total de sus ${pruebaJSON2.cantidadDePaquetes} paquetes es $${pruebaJSON2.precioAcumulado}.`
+    if (cantidadPaq == 1) {
+        resultadoTotal.innerHTML =  `El total de su paquete es $${pruebaJSON2.precioAcumulado}.`
+    }
+    else {
+        resultadoTotal.innerHTML =  `El total de sus ${pruebaJSON2.cantidadDePaquetes} paquetes es $${pruebaJSON2.precioAcumulado}.`
+    }
     $("#divCotizador").removeClass("is-hidden");
     $("#divCotizador").empty();
     $("#divCotizador").append(resultadoTotal);

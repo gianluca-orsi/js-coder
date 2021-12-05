@@ -27,13 +27,13 @@
         <div class="navbar-menu is-active">
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <a style="font-size: 2rem; background-color:'black';" onclick="usuario()">
+                    <a style="font-size: 2rem; background-color:'black';" class="hvr-grow" onclick="usuario()">
                         <i class="fas fa-id-badge"></i> Usuario
                     </a>
                 </div>
                 <div class="navbar-item">
-                    <a style="font-size: 2rem; background-color:'black';" onclick="iniciarConsulta()">
-                        <i class="fas fa-id-badge"></i> Iniciar Consulta
+                    <a style="font-size: 2rem; background-color:'black';" class="hvr-grow" onclick="iniciarConsulta()">
+                        <i class="fas fa-envelope"></i> Consulta
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
     
     <main class="container is-fluid">
         <header class="my-3 pt-2">
-            <div class="columns is-mobile is-centered my-3">
+            <div class="columns is-mobile is-centered my-5">
                 <section class="column is-10 has-text-centered top">
                     <h1 class="top--titulo">
                         Bienvenidos al sitio web de <span class="top--titulo--enfasis">Fast Service</span>, estamos para brindarte un servicio de paquetería seguro y veloz para que tus envíos lleguen a todo el país
@@ -51,7 +51,7 @@
             </div>
         </header>
         
-        <div class="columns is-mobile is-centered my-3">
+        <div class="columns is-mobile is-centered my-5">
             <section class="column is-6 separador">
                 <p class="separador--texto has-text-centered">
                     Noticias
@@ -59,7 +59,7 @@
             </section>
         </div>
 
-        <div class="columns is-mobile is-centered">
+        <div class="columns is-mobile is-centered my-5">
             <div class="column is-10">
                 <div class="columns is-centered is-mobile">
                     <section class="column is-4 m-4 has-text-centered noticias">
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <div class="columns is-mobile is-centered">
+        <div class="columns is-mobile is-centered my-5">
             <section class="column is-6 separador">
                 <p class="separador--texto has-text-centered">
                     Cotizador de envíos
@@ -101,7 +101,7 @@
             </section>
         </div>
 
-        <div class="columns is-mobile is-centered has-text-centered my-3">
+        <div class="columns is-mobile is-centered has-text-centered my-5">
             <section class="column is-8 field noticias" id="cotizador">
                 <button class="hvr-ripple-out button boton boton--texto my-3" onclick="anadirPaquete()">
                     <p>Añadir paquete para cotizar</p>
@@ -109,56 +109,18 @@
             </section>
         </div>
 
-        <div class="columns is-mobile is-centered has-text-centered">
-            <div class="column is-10 is-centered">
-                <table class="table is-invisible is-centered is-inline-block is-justify-content-center" id="tablaCotizador">
-                    <thead>
-                        <tr>
-                            <th>
-                                N° Paq.
-                            </th>
-                            <th>
-                                Ancho
-                            </th>
-                            <th>
-                                Alto
-                            </th>
-                            <th>
-                                Profundidad
-                            </th>
-                            <th>
-                                Peso
-                            </th>
-                            <th>
-                                $ Tamaño
-                            </th>
-                            <th>
-                                $ Peso
-                            </th>
-                            <th>
-                                IVA
-                            </th>
-                            <th>
-                                Total
-                            </th>
-                            <th>
-                                
-                            </th>
-                        </tr>
-                    </thead>
+        <div id="divAnadirPaquete">
 
-                </table>
-                <br>
-                <button class="button is-invisible" id="botonCalcular" onclick="comenzarCotizacion()">Calcular</button>
-            </div>
         </div>
 
-        <div class="columns is-mobile is-centered has-text-centered">
+        <div class="columns is-mobile is-centered has-text-centered pb-3 my-5">
             <section class="column is-8 noticias is-hidden is-inline-block" id="divCotizador">
                 
             </section>
         </div>
 
+
+        <!-- MODAL DE USUARIO -->
         <div class="modal" id="modalUsuario">
             <div class="modal-background"></div>
             <div class="modal-card">
@@ -197,6 +159,8 @@
             </div>
         </div>
         
+
+        <!-- MODAL DE CONSULTAS -->
         <div class="modal" id="modalConsulta">
             <div class="modal-background"></div>
             <div class="modal-card">
@@ -225,7 +189,7 @@
                         <label for="emailUsuario">Email:</label>
                         <input type="email" class="input" id="emailUsuarioC" disabled placeholder="Email">
                         <label for="consulta">Escriba su consulta:</label>
-                        <textarea class="textarea" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit provident eius odit dignissimos ducimus, qui impedit, quos et quis sapiente similique totam nihil nostrum, harum eligendi ipsa nobis sit iure." rows="10"></textarea>
+                        <textarea class="textarea" id="consulta" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit provident eius odit dignissimos ducimus, qui impedit, quos et quis sapiente similique totam nihil nostrum, harum eligendi ipsa nobis sit iure." rows="10"></textarea>
                     </div>
                 </div>
                 <div class="columns is-mobile is-centered">

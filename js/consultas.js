@@ -36,18 +36,21 @@ function enviarConsulta() {
         userLastName: $("#apellidoUsuarioC").val(), 
         phone: $("#telefonoUsuarioC").val(), 
         address: $("#domicilioUsuarioC").val(), 
-        email: $("#emailUsuarioC").val()
+        email: $("#emailUsuarioC").val(),
+        consulta: $("#consulta").val()
     }
 
+    const infoJSON = JSON.stringify(INFOPOST);
+    
     $.ajax({
         type: 'post',
         url: './consultas.json',
-        data: JSON.stringify(INFOPOST),
+        data: infoJSON,
         contentType: 'application/json; charset=utf-8',
         traditional: true,
         success: $("#paraAgregarRespuesta").append(
             `<div>
-                Gracias, tu consulta se ha enviado con exito.
+                Gracias, tu consulta se ha enviado con exito. Uno de nuestros representantes se comunicará dentro de las siguientes 48 horas hábiles para atender tu consulta.
             </div>`
         )
     })

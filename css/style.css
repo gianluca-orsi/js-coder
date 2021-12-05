@@ -10442,7 +10442,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 /* Fuente para el resto del contenido */
-.fuenteAssistant, .boton--texto, .noticias--contenido, .footer--contenido {
+.fuenteAssistant, .resultado--texto, .boton--texto, .noticias--contenido, .footer--contenido {
   font-family: "Assistant", sans-serif;
 }
 
@@ -10477,6 +10477,11 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .boton--texto {
   font-size: 1.6rem;
   line-height: 1.8rem;
+}
+
+.resultado--texto {
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
 
 .separador--texto {
