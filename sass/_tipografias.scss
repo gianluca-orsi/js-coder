@@ -8,6 +8,20 @@
     font-family: 'Assistant', sans-serif;
 }
 
+li {
+    @extend .fuenteAssistant;
+    font-size: 1.4rem;
+    line-height: 1.6rem
+}
+
+.lista {
+    &--titulo {
+        @extend .fuenteDosis;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+        text-decoration: underline;
+    }
+}
 .top {
     &--titulo {
         @extend .fuenteDosis;
@@ -64,6 +78,13 @@
     }
 }
 
+.tabla {
+    &--texto {
+        @extend .fuenteAssistant;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+}
 .separador {
     &--texto {
         @extend .fuenteDosis;

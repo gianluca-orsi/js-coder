@@ -101,9 +101,10 @@ class Cotizador {
 //cuando se hace clic en anadir paquete para cotizar saca la clase is-invisible
 //del boton calcular y la tabla donde se colocan los valores a utilizar
 function anadirPaquete (){
+    $("#iniciarCotizador").empty();
     let tablaCotizador = document.createElement("div");
     $(tablaCotizador).addClass("columns is-mobile is-centered has-text-centered")
-    tablaCotizador.innerHTML =  `<div class="column is-10 is-centered">
+    tablaCotizador.innerHTML =  `<div class="column is-10 is-centered tabla--texto">
                                     <table class="table is-centered is-inline-block is-justify-content-center" id="tablaCotizador">
                                         <thead>
                                             <tr>
@@ -142,7 +143,13 @@ function anadirPaquete (){
 
                                     </table>
                                     <br>
-                                    <button class="button boton boton--texto hvr-ripple-out" id="botonCalcular" onclick="comenzarCotizacion()">Calcular</button>
+                                    <div class="columns is-centered is-mobile has-text-centered>
+                                        <section class="column is-6">
+                                            <button class="button boton boton--texto hvr-ripple-out" id="botonCalcular" onclick="comenzarCotizacion()">Calcular</button>
+                                            <br>
+                                            <button class="button boton boton--texto hvr-ripple-out" id="botonAnadirPaq" onclick="anadirPaquete()">Añadir nuevo paquete</button>
+                                        </section>
+                                    </div>
                                 </div>`
     if (cantidadPaq == 0) {
         $("#divAnadirPaquete").append(tablaCotizador);

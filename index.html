@@ -45,12 +45,13 @@
             <div class="columns is-mobile is-centered my-5">
                 <section class="column is-10 has-text-centered top">
                     <h1 class="top--titulo">
-                        Bienvenidos al sitio web de <span class="top--titulo--enfasis">Fast Service</span>, estamos para brindarte un servicio de paquetería seguro y veloz para que tus envíos lleguen a todo el país
+                        Bienvenidos al sitio web de <span class="top--titulo--enfasis">Fast Service</span>, un servicio de paquetería seguro y veloz con envios a todo el país
                     </h1>
                 </section>
             </div>
         </header>
         
+        <!-- noticias titulo -->
         <div class="columns is-mobile is-centered my-5">
             <section class="column is-6 separador">
                 <p class="separador--texto has-text-centered">
@@ -59,6 +60,7 @@
             </section>
         </div>
 
+        <!-- noticias contenido-->
         <div class="columns is-mobile is-centered my-5">
             <div class="column is-10">
                 <div class="columns is-centered is-mobile">
@@ -93,6 +95,30 @@
             </div>
         </div>
 
+        <!-- localidades atendidas titulo -->
+        <div class="columns is-mobile is-centered my-5">
+            <section class="column is-6 separador">
+                <p class="separador--texto has-text-centered">
+                    Localidades atendidas
+                </p>
+            </section>
+        </div>
+
+        <!-- localidades atendidas contenido 1 -->
+        <div class="columns is-mobile is-centered" id="divLocalidades1">
+
+        </div>
+
+        <!-- localidades atendidas contenido 2 -->
+        <div class="columns is-mobile is-centered" id="divLocalidades2">
+
+        </div>
+
+        <!-- localidades atendidas contenido 3 -->
+        <div class="columns is-mobile is-centered" id="divLocalidades3">
+
+        </div>
+
         <div class="columns is-mobile is-centered my-5">
             <section class="column is-6 separador">
                 <p class="separador--texto has-text-centered">
@@ -101,10 +127,10 @@
             </section>
         </div>
 
-        <div class="columns is-mobile is-centered has-text-centered my-5">
+        <div class="columns is-mobile is-centered has-text-centered my-5" id="iniciarCotizador">
             <section class="column is-8 field noticias" id="cotizador">
                 <button class="hvr-ripple-out button boton boton--texto my-3" onclick="anadirPaquete()">
-                    <p>Añadir paquete para cotizar</p>
+                    <p>Iniciar cotizador</p>
                 </button>
             </section>
         </div>
@@ -118,7 +144,6 @@
                 
             </section>
         </div>
-
 
         <!-- MODAL DE USUARIO -->
         <div class="modal" id="modalUsuario">
@@ -227,10 +252,11 @@
         </div>
     </footer>
     
+    <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/archivo.js"></script>
     <script src="./js/usuario.js"></script>
     <script src="./js/consultas.js"></script>
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/localidades.js"></script>
 </body>
 
 </html>

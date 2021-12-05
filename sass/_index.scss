@@ -34,3 +34,8 @@ main {
     -webkit-box-shadow: 9px 9px 7px 0px rgba(36,29,56,0.85);
     -moz-box-shadow: 9px 9px 7px 0px rgba(36,29,56,0.85);
 }
+
+li {
+    list-style-type: disc;
+    list-style-position: inside;
+}

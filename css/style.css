@@ -10437,13 +10437,24 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 /* Fuente para titulos y cosas importantes */
-.fuenteDosis, .separador--texto, .noticias--titulo, .footer--titulo, .top--titulo, .top--titulo--enfasis {
+.fuenteDosis, .separador--texto, .noticias--titulo, .footer--titulo, .top--titulo, .top--titulo--enfasis, .lista--titulo {
   font-family: "Dosis", sans-serif;
 }
 
 /* Fuente para el resto del contenido */
-.fuenteAssistant, .resultado--texto, .boton--texto, .noticias--contenido, .footer--contenido {
+.fuenteAssistant, .tabla--texto, .resultado--texto, .boton--texto, .noticias--contenido, .footer--contenido, li {
   font-family: "Assistant", sans-serif;
+}
+
+li {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+.lista--titulo {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  text-decoration: underline;
 }
 
 .top--titulo, .top--titulo--enfasis {
@@ -10482,6 +10493,11 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .resultado--texto {
   font-size: 1.8rem;
   line-height: 2rem;
+}
+
+.tabla--texto {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
 }
 
 .separador--texto {
@@ -10526,6 +10542,11 @@ main {
   box-shadow: 9px 9px 7px 0px rgba(36, 29, 56, 0.85);
   -webkit-box-shadow: 9px 9px 7px 0px rgba(36, 29, 56, 0.85);
   -moz-box-shadow: 9px 9px 7px 0px rgba(36, 29, 56, 0.85);
+}
+
+li {
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 html {
