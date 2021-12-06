@@ -2,11 +2,20 @@
 function usuario () {
     let menuUsuario = $("#modalUsuario")
     $(menuUsuario).addClass("is-active is-clipped");
-    $("#nombreUsuario").val(localStorage.getItem("nombreUsuario"));
-    $("#apellidoUsuario").val(localStorage.getItem("apellidoUsuario"));
-    $("#telefonoUsuario").val(localStorage.getItem("telefonoUsuario"));
-    $("#domicilioUsuario").val(localStorage.getItem("domicilioUsuario"));
-    $("#emailUsuario").val(localStorage.getItem("emailUsuario"));
+    if (localStorage.getItem("nombreUsuario") == '' || localStorage.getItem("nombreUsuario") == null ||
+        localStorage.getItem("apellidoUsuario") == '' || localStorage.getItem("apellidoUsuario") == null ||
+        localStorage.getItem("telefonoUsuario") == '' || localStorage.getItem("telefonoUsuario") == null ||
+        localStorage.getItem("domicilioUsuario") == '' || localStorage.getItem("domicilioUsuario") == null ||
+        localStorage.getItem("emailUsuario") == '' || localStorage.getItem("emailUsuario") == null) { 
+        modificarDatos();
+    }
+    else {
+        $("#nombreUsuario").val(localStorage.getItem("nombreUsuario"));
+        $("#apellidoUsuario").val(localStorage.getItem("apellidoUsuario"));
+        $("#telefonoUsuario").val(localStorage.getItem("telefonoUsuario"));
+        $("#domicilioUsuario").val(localStorage.getItem("domicilioUsuario"));
+        $("#emailUsuario").val(localStorage.getItem("emailUsuario"));
+    }
 }
 
 //saca el disabled a los inputs del modal usuario para poder ingresar nuevos datos
@@ -37,7 +46,7 @@ function cargarDatos () {
     $("#emailUsuario").prop("disabled", true);
 }
 
-//
+//borrar datos de usuario
 function borrarDatos () {
     localStorage.removeItem("nombreUsuario");
     localStorage.removeItem("apellidoUsuario");

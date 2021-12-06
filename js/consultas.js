@@ -1,6 +1,6 @@
 const URLCONSULTAS = "../js/consultas.json"
 
-// con ajax podria hacer un formulario de consultas, cuando los datos estan bien se hace un popup afirmativo o negativo en caso de que falten datos
+//cuando se hace clic en el boton consulta aparece un modal y toma los datos de localstorage si es que ya existe un usuario
 function iniciarConsulta() {
     let modalConsulta = $("#modalConsulta")
     $(modalConsulta).addClass("is-active is-clipped")
@@ -25,11 +25,13 @@ function iniciarConsulta() {
     }
 }
 
+//cerrar el modal
 function cerrarC () {
     let modalConsulta = $("#modalConsulta");
     $(modalConsulta).removeClass("is-active is-clipped");
 }
 
+//para enviar la consulta
 function enviarConsulta() {
     var INFOPOST = {
         userName: $("#nombreUsuarioC").val(), 
@@ -54,13 +56,4 @@ function enviarConsulta() {
             </div>`
         )
     })
-    /* $.post (URLCONSULTAS, infoJSON, function (respuesta, estado) {
-        if (estado === "success") {
-            $("#botonEnviarConsulta").append(
-                `<div>
-                    ${respuesta.userName}, tu consulta se ha enviado con exito.
-                </div>`
-            )
-        }
-    }, 'json') */
 }
