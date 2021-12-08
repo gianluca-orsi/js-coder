@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nombre": "San Lorenzo"
+    },
+    {
+        "id": 2,
+        "nombre": "Santa Fe"
+    },
+    {
+        "id": 3,
+        "nombre": "Rosario"
+    },
+    {
+        "id": 4,
+        "nombre": "Venado Tuerto"
+    },
+    {
+        "id": 5,
+        "nombre": "Vera"
+    },
+    {
+        "id": 6,
+        "nombre": "Villa Amelia"
+    },
+    {
+        "id": 7,
+        "nombre": "Totoras"
+    },
+    {
+        "id": 8,
+        "nombre": "Casilda"
+    },
+    {
+        "id": 9,
+        "nombre": "Arroyo Seco"
+    }
+]

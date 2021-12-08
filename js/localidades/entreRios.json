@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Concepción del Uruguay"
+    },
+    {
+        "id": 2,
+        "nombre": "Nogoyá"
+    },
+    {
+        "id": 3,
+        "nombre": "Gualeguaychú"
+    },
+    {
+        "id": 4,
+        "nombre": "Concordia"
+    },
+    {
+        "id": 5,
+        "nombre": "Victoria"
+    },
+    {
+        "id": 6,
+        "nombre": "Paraná"
+    }
+]

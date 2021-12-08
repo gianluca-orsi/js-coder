@@ -9,6 +9,14 @@ const sanLuis = ["San Luís", "Merlo", "Villa Mercedes"];
 const misiones = ["Posadas", "Puerto Iguazú", "Oberá"];
 
 const URLJSONBA = "../js/localidades/buenosAires.json"
+const URLJSONSF = "../js/localidades/santaFe.json"
+const URLJSONER = "../js/localidades/entreRios.json"
+const URLJSONCOR = "../js/localidades/cordoba.json"
+const URLJSONCH = "../js/localidades/chaco.json"
+const URLJSONLP = "../js/localidades/laPampa.json"
+const URLJSONMDZ = "../js/localidades/mendoza.json"
+const URLJSONSL = "../js/localidades/sanLuis.json"
+const URLJSONMIS = "../js/localidades/misiones.json"
 
 //para localidades de buenos aires
 var divBA = document.createElement("div");
@@ -22,7 +30,6 @@ $.getJSON(URLJSONBA, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
         console.log(datos);
-        console.log(datos.nombre)
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
@@ -41,11 +48,18 @@ $(divSF).append("<p class='has-text-centered lista--titulo'>Santa Fe</p>")
 $("#divLocalidades1").append(divSF);
 let listaSF = document.createElement("ul");
 
-for (let i = 0; i<santaFe.length; i++) {
-    var li = document.createElement("li");
-    li.innerHTML = `${santaFe[i]}`
-    listaSF.appendChild(li);
-}
+$.getJSON(URLJSONSF, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaSF.appendChild(li);
+        }
+    }
+})
 $(divSF).append(listaSF);
 
 //para localidades de entre rios
@@ -56,11 +70,18 @@ $(divER).append("<p class='has-text-centered lista--titulo'>Entre Ríos</p>")
 $("#divLocalidades1").append(divER);
 let listaER = document.createElement("ul");
 
-for (let i = 0; i<entreRios.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${entreRios[i]}`
-        listaER.appendChild(li);
+$.getJSON(URLJSONER, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaER.appendChild(li);
+        }
     }
+})
 $(divER).append(listaER);
 
 //para localidades de cordoba
@@ -71,11 +92,18 @@ $(divCOR).append("<p class='has-text-centered lista--titulo'>Córdoba</p>")
 $("#divLocalidades2").append(divCOR);
 let listaCOR = document.createElement("ul");
 
-for (let i = 0; i<cordoba.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${cordoba[i]}`
-        listaCOR.appendChild(li);
+$.getJSON(URLJSONCOR, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaCOR.appendChild(li);
+        }
     }
+})
 $(divCOR).append(listaCOR);
 
 //para localidades de chaco
@@ -86,11 +114,18 @@ $(divCH).append("<p class='has-text-centered lista--titulo'>Chaco</p>")
 $("#divLocalidades2").append(divCH);
 let listaCH = document.createElement("ul");
 
-for (let i = 0; i<chaco.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${chaco[i]}`
-        listaCH.appendChild(li);
+$.getJSON(URLJSONCH, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaCH.appendChild(li);
+        }
     }
+})
 $(divCH).append(listaCH);
 
 //para localidades de la pampa
@@ -101,11 +136,18 @@ $(divLP).append("<p class='has-text-centered lista--titulo'>La Pampa</p>")
 $("#divLocalidades2").append(divLP);
 let listaLP = document.createElement("ul");
 
-for (let i = 0; i<laPampa.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${laPampa[i]}`
-        listaLP.appendChild(li);
+$.getJSON(URLJSONLP, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaLP.appendChild(li);
+        }
     }
+})
 $(divLP).append(listaLP);
 
 //para localidades de mendoza
@@ -116,11 +158,18 @@ $(divMDZ).append("<p class='has-text-centered lista--titulo'>Mendoza</p>")
 $("#divLocalidades3").append(divMDZ);
 let listaMDZ = document.createElement("ul");
 
-for (let i = 0; i<mendoza.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${mendoza[i]}`
-        listaMDZ.appendChild(li);
+$.getJSON(URLJSONMDZ, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaMDZ.appendChild(li);
+        }
     }
+})
 $(divMDZ).append(listaMDZ);
 
 //para localidades de san luis
@@ -131,11 +180,18 @@ $(divSL).append("<p class='has-text-centered lista--titulo'>San Luís</p>")
 $("#divLocalidades3").append(divSL);
 let listaSL = document.createElement("ul");
 
-for (let i = 0; i<sanLuis.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${sanLuis[i]}`
-        listaSL.appendChild(li);
+$.getJSON(URLJSONSL, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaSL.appendChild(li);
+        }
     }
+})
 $(divSL).append(listaSL);
 
 //para localidades de misiones
@@ -146,9 +202,16 @@ $(divMIS).append("<p class='has-text-centered lista--titulo'>Misiones</p>")
 $("#divLocalidades3").append(divMIS);
 let listaMIS = document.createElement("ul");
 
-for (let i = 0; i<misiones.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${misiones[i]}`
-        listaMIS.appendChild(li);
+$.getJSON(URLJSONMIS, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaMIS.appendChild(li);
+        }
     }
+})
 $(divMIS).append(listaMIS);

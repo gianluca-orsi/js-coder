@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Rio Tercero"
+    },
+    {
+        "id": 2,
+        "nombre": "Rio Cuarto"
+    },
+    {
+        "id": 3,
+        "nombre": "Córdoba"
+    },
+    {
+        "id": 4,
+        "nombre": "Bell Ville"
+    },
+    {
+        "id": 5,
+        "nombre": "San Francisco"
+    }
+]

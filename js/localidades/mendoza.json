@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nombre": "San Rafael"
+    },
+    {
+        "id": 2,
+        "nombre": "San Martín"
+    },
+    {
+        "id": 3,
+        "nombre": "Mendoza"
+    },
+    {
+        "id": 4,
+        "nombre": "La Paz"
+    }
+]
