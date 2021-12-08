@@ -19,11 +19,9 @@ let listaBA = document.createElement("ul");
 $.getJSON(URLJSONBA, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaBA.appendChild(li);
         }
     }
@@ -41,11 +39,9 @@ let listaSF = document.createElement("ul");
 $.getJSON(URLJSONSF, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaSF.appendChild(li);
         }
     }
@@ -63,11 +59,9 @@ let listaER = document.createElement("ul");
 $.getJSON(URLJSONER, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaER.appendChild(li);
         }
     }
@@ -85,11 +79,9 @@ let listaCOR = document.createElement("ul");
 $.getJSON(URLJSONCOR, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaCOR.appendChild(li);
         }
     }
@@ -107,11 +99,9 @@ let listaCH = document.createElement("ul");
 $.getJSON(URLJSONCH, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaCH.appendChild(li);
         }
     }
@@ -129,11 +119,9 @@ let listaLP = document.createElement("ul");
 $.getJSON(URLJSONLP, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaLP.appendChild(li);
         }
     }
@@ -151,11 +139,9 @@ let listaMDZ = document.createElement("ul");
 $.getJSON(URLJSONMDZ, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaMDZ.appendChild(li);
         }
     }
@@ -173,11 +159,9 @@ let listaSL = document.createElement("ul");
 $.getJSON(URLJSONSL, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaSL.appendChild(li);
         }
     }
@@ -195,11 +179,9 @@ let listaMIS = document.createElement("ul");
 $.getJSON(URLJSONMIS, function(respuesta, estado) {
     if (estado === "success") {
         var datos = respuesta;
-        console.log(datos);
         for (const dato of datos) {
             var li = document.createElement("li");
             li.innerHTML = `${dato.nombre}`
-            console.log(dato.nombre);
             listaMIS.appendChild(li);
         }
     }

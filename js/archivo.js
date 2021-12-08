@@ -17,9 +17,6 @@ var acumulador = 0;
 var contadorExterno = 0; 
 //lo voy a usar para resetear el resultado de la cotizacion total
 //todavia no encuentro una forma que no se rompa
-var verificadorCotizacion = false;
-
-
 class Cotizador {
     constructor (x, y, z, pesoPaq, precioTamano, precioPeso, precioIva, precioTotal) {
         this.x = x;
@@ -192,7 +189,6 @@ function anadirPaquete (){
 //toma los valores que se ingresan en el formulario y los asigna al array correspondiente
 function comenzarCotizacion (){
     let contador = $(".cantidadPaq").length;
-    console.log(contador);
 
     //toma los valores de los campos del formulario y los guarda en variables
     for (let i=0; i<contador; i++) {
@@ -240,9 +236,7 @@ function comenzarCotizacion (){
     // para probar como usar JSON
     var convertirAJSON = {precioAcumulado: acumulador, cantidadDePaquetes: cantidadPaq};
     var pruebaJSON = JSON.stringify(convertirAJSON);
-    console.log(pruebaJSON);
     var pruebaJSON2 = JSON.parse(pruebaJSON);
-    console.log(pruebaJSON2);
 
     //remueve la clase is-hidden de un div en html y muestra el resultado total acumulado de las cotizaciones
     var resultadoTotal = document.createElement ("p");
@@ -257,12 +251,5 @@ function comenzarCotizacion (){
     $("#divCotizador").removeClass("is-hidden");
     $("#divCotizador").empty();
     $("#divCotizador").append(resultadoTotal);
-    verificadorCotizacion = false;
-    
-    
-    console.log(precioTotal);
     acumulador = 0;
 }
-
-console.log(cotizacion);
-console.log(typeof precioTotal)
