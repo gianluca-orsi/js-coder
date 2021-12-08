@@ -8,6 +8,8 @@ const mendoza = ["San Rafael", "San Martín", "La Paz"];
 const sanLuis = ["San Luís", "Merlo", "Villa Mercedes"];
 const misiones = ["Posadas", "Puerto Iguazú", "Oberá"];
 
+const URLJSONBA = "../js/localidades/buenosAires.json"
+
 //para localidades de buenos aires
 var divBA = document.createElement("div");
 $(divBA).addClass("column is-3 noticias m-3 hvr-grow");
@@ -16,11 +18,19 @@ $(divBA).append("<p class='has-text-centered lista--titulo'>Buenos Aires</p>")
 $("#divLocalidades1").append(divBA);
 let listaBA = document.createElement("ul");
 
-for (let i = 0; i<buenosAires.length; i++) {
-        var li = document.createElement("li");
-        li.innerHTML = `${buenosAires[i]}`
-        listaBA.appendChild(li);
+$.getJSON(URLJSONBA, function(respuesta, estado) {
+    if (estado === "success") {
+        var datos = respuesta;
+        console.log(datos);
+        console.log(datos.nombre)
+        for (const dato of datos) {
+            var li = document.createElement("li");
+            li.innerHTML = `${dato.nombre}`
+            console.log(dato.nombre);
+            listaBA.appendChild(li);
+        }
     }
+})
 $(divBA).append(listaBA);
 
 //para localidades de santa fe
