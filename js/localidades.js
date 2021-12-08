@@ -1,13 +1,3 @@
-const buenosAires = ["San Nicolás", "Olavarría", "Chivilcoy", "Tandil", "Ciudad Autónoma de Buenos Aires", "Campana", "Zarate", "La Plata", "Mar del Plata", "Bahía Blanca"];
-const santaFe = ["San Lorenzo", "Santa Fe", "Rosario", "Venado Tuerto", "Vera", "Villa Amelia", "Totoras", "Casilda", "Arroyo Seco"];
-const entreRios = ["Concepción del Uruguay", "Nogoyá", "Gualeguaychú", "Concordia", "Victoria"];
-const cordoba = ["Rio Tercero", "Rio Cuarto", "Córdoba", "Bell Ville", "San Francisco"];
-const chaco = ["Resistencia", "Saenz Peña", "Charata"];
-const laPampa = ["Santa Rosa", "General Pico"];
-const mendoza = ["San Rafael", "San Martín", "La Paz"];
-const sanLuis = ["San Luís", "Merlo", "Villa Mercedes"];
-const misiones = ["Posadas", "Puerto Iguazú", "Oberá"];
-
 const URLJSONBA = "../js/localidades/buenosAires.json"
 const URLJSONSF = "../js/localidades/santaFe.json"
 const URLJSONER = "../js/localidades/entreRios.json"
