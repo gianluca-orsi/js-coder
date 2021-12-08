@@ -112,28 +112,28 @@ function anadirPaquete (){
                                                     N° Paq.
                                                 </th>
                                                 <th>
-                                                    Ancho
+                                                    Ancho (CM)
                                                 </th>
                                                 <th>
-                                                    Alto
+                                                    Alto (CM)
                                                 </th>
                                                 <th>
-                                                    Profundidad
+                                                    Profundidad (CM)
                                                 </th>
                                                 <th>
-                                                    Peso
+                                                    Peso (KG)
                                                 </th>
                                                 <th>
-                                                    $ Tamaño
+                                                    $ Según Tamaño
                                                 </th>
                                                 <th>
-                                                    $ Peso
+                                                    $ Según Peso
                                                 </th>
                                                 <th>
                                                     IVA
                                                 </th>
                                                 <th>
-                                                    Total
+                                                    $ Total
                                                 </th>
                                                 <th>
                                                     

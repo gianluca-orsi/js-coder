@@ -54,7 +54,7 @@ $(divSF).append(listaSF);
 
 //para localidades de entre rios
 var divER = document.createElement("div");
-$(divER).addClass("column is-3 noticias m-3 hvr-grow");
+$(divER).addClass("column is-3 noticias m-3 hvr-grow is-narrow");
 $(divER).attr('id', 'divER');
 $(divER).append("<p class='has-text-centered lista--titulo'>Entre Ríos</p>")
 $("#divLocalidades1").append(divER);
